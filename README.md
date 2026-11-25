@@ -1,10 +1,14 @@
 # Warpdrive SDK
 
+> **This checkout:** the Nova frontend has been ported to Preact + Vite in
+> [`src/`](./src), with its build and API settings in [`BUILDING.md`](./BUILDING.md)
+> and [`config.json`](./config.json). The SDK documentation below still applies.
+
 Warpdrive turns an Android handheld into a console. The backend app runs your frontend, a website in a zip, full screen, and gives it control of the device through **warp.js**: Wi-Fi, Bluetooth, battery, audio, display, performance, fans, sensors, controllers, games, apps and power.
 
-This guide covers everything a frontend can do. Nova, the open-source frontend in `frontends/nova`, uses every part of the SDK and is the best place to see it in a full interface.
+This guide covers everything a frontend can do. Nova, the open-source frontend in [`src/`](./src), uses every part of the SDK and is the best place to see it in a full interface.
 
-**Library 2.0** · **API 2** · Every point is listed in [POINTS.md](../POINTS.md).
+**Library 2.0** · **API 2** · Call `await warp.points()` on a console for the full list.
 
 ---
 
@@ -106,7 +110,7 @@ Values have a type: `bool`, `int`, `float`, `string`, `list` or `object`. A valu
 | Sizes | bytes |
 | Timestamps | milliseconds since 1970, like `Date.now()` |
 
-[POINTS.md](../POINTS.md) lists every point with its type, what you can do with it, and its arguments. You can also ask the console: `await warp.points()`.
+`await warp.points()` lists every point with its type, what you can do with it, and its arguments.
 
 ## API
 

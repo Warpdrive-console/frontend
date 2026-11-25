@@ -1,0 +1,31 @@
+{
+  "name": "warpdrive-frontend",
+  "private": true,
+  "version": "4.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run check && vite build && node scripts/zip.mjs",
+    "preview": "vite preview",
+    "lint": "oxlint src",
+    "check": "npm run typecheck && npm run lint"
+  },
+  "dependencies": {
+    "@noble/curves": "^2.4.0",
+    "@preact/signals": "^2.11.4",
+    "@rotur/ui": "git+https://git.rotur.dev/rotur/ui.git#v0.3.0",
+    "hash-wasm": "^4.13.0",
+    "lucide-preact": "^1.79.0",
+    "preact": "^10.29.8",
+    "qrcode-generator": "^1.4.4",
+    "rotur-sdk": "^3.12.2"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.2",
+    "@types/node": "^26.6.7",
+    "oxlint": "^1.95.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
+  }
+}

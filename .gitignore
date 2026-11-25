@@ -1,0 +1,8 @@
+dist/
+nova.zip
+node_modules/
+.env
+.env.*
+*.local
+*.tsbuildinfo
+.DS_Store

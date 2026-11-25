@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <title>Nova</title>
+    <link rel="icon" href="./assets/logo.svg" />
+    <script>
+      addEventListener(
+        'error',
+        function (e) {
+          // Pictures and media in a message may fail to load without the app failing to start.
+          if (e.target && e.target !== window && e.target.tagName !== 'SCRIPT') return
+          var box = document.getElementById('boot-error')
+          if (!box) {
+            box = document.createElement('pre')
+            box.id = 'boot-error'
+            document.body.appendChild(box)
+          }
+          box.style.cssText =
+            'position:fixed;inset:auto 1rem 4rem;z-index:99;padding:1rem;border-radius:.5rem;background:#300;color:#fff;font:14px monospace;white-space:pre-wrap'
+          box.textContent = 'Nova could not start: ' + (e.message || 'a file failed to load')
+        },
+        true,
+      )
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/warp.js"></script>
+    <script src="/warp-mock.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
